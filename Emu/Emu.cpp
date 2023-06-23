@@ -159,6 +159,7 @@ tl_agent::Port<tl_agent::ReqField, tl_agent::RespField, tl_agent::EchoField, BEA
     port->a.mask = &(dut_ptr->master_port_0_0_a_bits_mask);
     port->a.data = (uint8_t*)&(dut_ptr->master_port_0_0_a_bits_data);
     port->a.alias = (uint8_t*)&(dut_ptr->master_port_0_0_a_bits_user_alias);
+    port->a.usr_needHint = (bool*)&(dut_ptr->master_port_0_0_a_bits_user_needHint);
 
     port->b.ready = &(dut_ptr->master_port_0_0_b_ready);
     port->b.valid = &(dut_ptr->master_port_0_0_b_valid);
@@ -207,6 +208,7 @@ tl_agent::Port<tl_agent::ReqField, tl_agent::RespField, tl_agent::EchoField, BEA
     port->a.mask = &(dut_ptr->master_port_1_0_a_bits_mask);
     port->a.data = (uint8_t*)&(dut_ptr->master_port_1_0_a_bits_data);
     port->a.alias = (uint8_t*)&(dut_ptr->master_port_1_0_a_bits_user_alias);
+    port->a.usr_needHint = (bool*)&(dut_ptr->master_port_0_0_a_bits_user_needHint );
 
     port->b.ready = &(dut_ptr->master_port_1_0_b_ready);
     port->b.valid = &(dut_ptr->master_port_1_0_b_valid);

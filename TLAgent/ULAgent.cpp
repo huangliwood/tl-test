@@ -49,6 +49,7 @@ namespace tl_agent {
         *this->port->a.mask = *a->mask;
         *this->port->a.source = *a->source;
         *this->port->a.valid = true;
+        *this->port->a.usr_needHint = true;
         return OK;
     }
 

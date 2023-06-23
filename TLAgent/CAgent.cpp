@@ -89,6 +89,7 @@ namespace tl_agent {
         *this->port->a.source = *a->source;
         *this->port->a.alias = *a->alias;
         *this->port->a.valid = true;
+        *this->port->a.usr_needHint = true;
         return OK;
     }
 

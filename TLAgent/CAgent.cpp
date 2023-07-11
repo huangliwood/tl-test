@@ -102,8 +102,8 @@ namespace tl_agent {
             Log("[info] id pool full\n");
             return;
         }
-
-        tlc_assert(localBoard->haskey(*b->address), "Probe an non-exist block!");
+        printf("b->address 0x%llx \n",*b->address & PADDR_MASK);
+        tlc_assert(localBoard->haskey(*b->address & PADDR_MASK), "Probe an non-exist block!");
 
         auto info = localBoard->query(*b->address);
         auto exact_status = info->status[*b->alias];
@@ -511,7 +511,7 @@ namespace tl_agent {
         req_a->mask = new uint32_t(0xffffffffUL);
         req_a->source = new uint8_t(this->idpool.getid());
         req_a->alias = new uint8_t(alias);
-        // Log("== id == acquire %d\n", *req_a->source);
+        Log("== id == acquire %d\n", *req_a->source);
         pendingA.init(req_a, 1);
         switch (param) {
         case NtoB:

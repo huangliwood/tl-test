@@ -15,7 +15,8 @@
 extern uint64_t Cycles;
 extern bool Verbose;
 extern bool dump_db;
-
+#define PADDR_WIDTH 32
+#define PADDR_MASK ((1<<PADDR_WIDTH)-1)
 
 inline char* timestamp_filename(time_t t) {
     static char buf[1024];
@@ -37,7 +38,7 @@ enum {
     TIMEOUT_INTERVAL = 5000
 };
 
-typedef uint16_t paddr_t;
+typedef uint64_t paddr_t;
 
 #define tlc_assert(cond, info) \
     do { \

@@ -153,7 +153,7 @@ tl_agent::Port<tl_agent::ReqField, tl_agent::RespField, tl_agent::EchoField, BEA
     port->a.valid = &(dut_ptr->master_port_0_0_a_valid);
     port->a.opcode = &(dut_ptr->master_port_0_0_a_bits_opcode);
     port->a.param = &(dut_ptr->master_port_0_0_a_bits_param);
-    port->a.address = &(dut_ptr->master_port_0_0_a_bits_address);
+    port->a.address = (paddr_t*)&(dut_ptr->master_port_0_0_a_bits_address);
     port->a.size = &(dut_ptr->master_port_0_0_a_bits_size);
     port->a.source = &(dut_ptr->master_port_0_0_a_bits_source);
     port->a.mask = &(dut_ptr->master_port_0_0_a_bits_mask);
@@ -165,7 +165,7 @@ tl_agent::Port<tl_agent::ReqField, tl_agent::RespField, tl_agent::EchoField, BEA
     port->b.valid = &(dut_ptr->master_port_0_0_b_valid);
     port->b.opcode = &(dut_ptr->master_port_0_0_b_bits_opcode);
     port->b.param = &(dut_ptr->master_port_0_0_b_bits_param);
-    port->b.address = &(dut_ptr->master_port_0_0_b_bits_address);
+    port->b.address = (paddr_t*)&(dut_ptr->master_port_0_0_b_bits_address);
     port->b.size = &(dut_ptr->master_port_0_0_b_bits_size);
     port->b.source = &(dut_ptr->master_port_0_0_b_bits_source);
     port->b.alias = (uint8_t *)&(dut_ptr->master_port_0_0_b_bits_data[0]);
@@ -174,7 +174,7 @@ tl_agent::Port<tl_agent::ReqField, tl_agent::RespField, tl_agent::EchoField, BEA
     port->c.valid = &(dut_ptr->master_port_0_0_c_valid);
     port->c.opcode = &(dut_ptr->master_port_0_0_c_bits_opcode);
     port->c.param = &(dut_ptr->master_port_0_0_c_bits_param);
-    port->c.address = &(dut_ptr->master_port_0_0_c_bits_address);
+    port->c.address = (paddr_t*)&(dut_ptr->master_port_0_0_c_bits_address);
     port->c.size = &(dut_ptr->master_port_0_0_c_bits_size);
     port->c.source = &(dut_ptr->master_port_0_0_c_bits_source);
     port->c.data = (uint8_t*)&(dut_ptr->master_port_0_0_c_bits_data);
@@ -202,7 +202,7 @@ tl_agent::Port<tl_agent::ReqField, tl_agent::RespField, tl_agent::EchoField, BEA
     port->a.valid = &(dut_ptr->master_port_1_0_a_valid);
     port->a.opcode = &(dut_ptr->master_port_1_0_a_bits_opcode);
     port->a.param = &(dut_ptr->master_port_1_0_a_bits_param);
-    port->a.address = &(dut_ptr->master_port_1_0_a_bits_address);
+    port->a.address = (paddr_t*)&(dut_ptr->master_port_1_0_a_bits_address);
     port->a.size = &(dut_ptr->master_port_1_0_a_bits_size);
     port->a.source = &(dut_ptr->master_port_1_0_a_bits_source);
     port->a.mask = &(dut_ptr->master_port_1_0_a_bits_mask);
@@ -214,7 +214,7 @@ tl_agent::Port<tl_agent::ReqField, tl_agent::RespField, tl_agent::EchoField, BEA
     port->b.valid = &(dut_ptr->master_port_1_0_b_valid);
     port->b.opcode = &(dut_ptr->master_port_1_0_b_bits_opcode);
     port->b.param = &(dut_ptr->master_port_1_0_b_bits_param);
-    port->b.address = &(dut_ptr->master_port_1_0_b_bits_address);
+    port->b.address = (paddr_t*)&(dut_ptr->master_port_1_0_b_bits_address);
     port->b.size = &(dut_ptr->master_port_1_0_b_bits_size);
     port->b.source = &(dut_ptr->master_port_1_0_b_bits_source);
     port->b.alias = (uint8_t*)&(dut_ptr->master_port_1_0_b_bits_data[0]);
@@ -223,7 +223,7 @@ tl_agent::Port<tl_agent::ReqField, tl_agent::RespField, tl_agent::EchoField, BEA
     port->c.valid = &(dut_ptr->master_port_1_0_c_valid);
     port->c.opcode = &(dut_ptr->master_port_1_0_c_bits_opcode);
     port->c.param = &(dut_ptr->master_port_1_0_c_bits_param);
-    port->c.address = &(dut_ptr->master_port_1_0_c_bits_address);
+    port->c.address = (paddr_t*)&(dut_ptr->master_port_1_0_c_bits_address);
     port->c.size = &(dut_ptr->master_port_1_0_c_bits_size);
     port->c.source = &(dut_ptr->master_port_1_0_c_bits_source);
     port->c.data = (uint8_t*)&(dut_ptr->master_port_1_0_c_bits_data);

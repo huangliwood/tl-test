@@ -4,7 +4,13 @@ project(tlc_test)
 set(CMAKE_CXX_STANDARD 17)
 
 if(NOT DEFINED DUT_DIR)
-    message(FATAL_ERROR "DUT_DIR is not set!")
+    message("DUT_DIR is not set!")
+endif()
+
+if(DEFINED PF)
+    set(PF_PATH1 "${DUT_DIR}/FakePrefetch.v")
+    set(PF_PATH2 "${DUT_DIR}/${PF}.v")
+    message("add ${PF_PATH1} ${PF_PATH2}")
 endif()
 
 if(DEFINED THREAD)

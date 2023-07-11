@@ -15,6 +15,7 @@ void CFuzzer::randomTest(bool do_alias) {
         if (rand() % 3) {
             if (rand() % 2) {
                 cAgent->do_acquireBlock(addr, tl_agent::NtoT, alias); // AcquireBlock NtoT
+                printf("addr 0x%lx\n",addr);
             } else {
                 cAgent->do_acquireBlock(addr, tl_agent::NtoT, alias); // AcquireBlock NtoB
             }
@@ -49,7 +50,35 @@ void CFuzzer::caseTest() {
     }
 }
 
+void CFuzzer::pfTest(){
+    paddr_t addr = (paddr_t)100;//this->cycles ;//& ((36<<1)-1);  // Tag + Set + Offset
+
+    int alias = 0;
+    if (rand() % 2) {
+        if (rand() % 3) {
+            if (rand() % 2) {
+                cAgent->do_acquireBlock(addr, tl_agent::NtoT, alias); // AcquireBlock NtoT
+                printf("addr 0x%lx\n",addr);
+            } else {
+                cAgent->do_acquireBlock(addr, tl_agent::NtoT, alias); // AcquireBlock NtoB
+            }
+        } else {
+            cAgent->do_acquirePerm(addr, tl_agent::NtoT, alias); // AcquirePerm
+        }
+    } else {
+        /*
+        uint8_t* putdata = new uint8_t[DATASIZE];
+        for (int i = 0; i < DATASIZE; i++) {
+            putdata[i] = (uint8_t)rand();
+        }
+        cAgent->do_releaseData(addr, tl_agent::TtoN, putdata); // ReleaseData
+        */
+        cAgent->do_releaseDataAuto(addr, alias); // feel free to releaseData according to its priv
+    } 
+}
+
 void CFuzzer::tick() {
-    this->randomTest(false);
-//    this->caseTest();
+     this->randomTest(false);
+    // this->caseTest();
+//    this->pfTest();
 }
